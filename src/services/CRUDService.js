@@ -68,7 +68,6 @@ let getUserInfoById = (userId) => {
 }
 
 let updateUser = (data) => {
-    console.log(data);
     return new Promise(async (resolve, reject) => {
         try {
             let user = await db.User.findOne({
