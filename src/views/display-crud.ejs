@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Display CRUD</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="container mt-4">
-        <table class="table text-center">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for(var i=0; i < dataTable.length; i++) { %>
-                    <tr>
-                        <th scope="row">
-                            <%= dataTable[i].id %>
-                        </th>
-                        <td>
-                            <%= dataTable[i].email %>
-                        </td>
-                        <td>
-                            <%= dataTable[i].fistName %>
-                        </td>
-                        <td>
-                            <%= dataTable[i].lastName %>
-                        </td>
-                        <td>
-                            <%= dataTable[i].address %>
-                        </td>
-                        <td>
-                            <a href="/edit-crud?id=<%= dataTable[i].id %>" class="btn btn-warning">Update</a>
-                            <a href="/edit-delete?id=<%= dataTable[i].id %>" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                    <% } %>
-            </tbody>
-        </table>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < dataTable.length; i++) { %>
+          <tr>
+            <th scope="row"><%= dataTable[i].id %></th>
+            <td><%= dataTable[i].email %></td>
+            <td><%= dataTable[i].fistName %></td>
+            <td><%= dataTable[i].lastName %></td>
+            <td><%= dataTable[i].address %></td>
+            <td>
+              <a
+                href="/edit-crud?id=<%= dataTable[i].id %>"
+                class="btn btn-warning"
+                >Update</a
+              >
+              <a
+                href="/delete-crud?id=<%= dataTable[i].id %>"
+                class="btn btn-danger"
+                >Delete</a
+              >
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
     </div>
-</body>
-
+  </body>
 </html>
